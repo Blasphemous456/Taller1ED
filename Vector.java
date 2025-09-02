@@ -44,6 +44,7 @@ public class Vector {
                                    ", Apellido: "+this.VectorPersona[i].getApellido()+
                                    ", Peso: "+this.VectorPersona[i].getPeso()+
                                    ", Altura: "+this.VectorPersona[i].getAltura());
+                System.out.println("");
             }
         }else{
             System.out.println("El vector esta vacio");
@@ -56,6 +57,7 @@ public class Vector {
             boolean encontrado = false;
             while (i <= this.Indice && !encontrado) {
                 if (this.VectorPersona[i].getNombre().equalsIgnoreCase(Nombre)) {
+                    System.out.println("Se encontro a " + Nombre +" en la posición: " + i );
                     encontrado = true;
                     return i;
                 } else {
