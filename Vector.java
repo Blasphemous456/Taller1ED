@@ -57,7 +57,7 @@ public class Vector {
             boolean encontrado = false;
             while (i <= this.Indice && !encontrado) {
                 if (this.VectorPersona[i].getNombre().equalsIgnoreCase(Nombre)) {
-                    System.out.println("Se encontro a " + Nombre +" en la posición: " + i );
+                    System.out.println("Se encontro a " + Nombre);
                     encontrado = true;
                     return i;
                 } else {
@@ -74,8 +74,10 @@ public class Vector {
     public void Eliminar(int Posicion) {
         if (!VectorVacio() && Posicion >= 0 && Posicion <= this.Indice) {
             for (int i = Posicion; i < this.Indice; i++) {
-                this.VectorPersona[i] = this.VectorPersona[i + 1];
+                this.VectorPersona[i] = this.VectorPersona[i + 1]; 
             }
+            this.VectorPersona[this.Indice]=null;
+            this.Indice--;
         } else {
             System.out.println("Posición invalida o vectór vacío");
         }

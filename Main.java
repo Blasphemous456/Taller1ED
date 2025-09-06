@@ -64,22 +64,22 @@ public class Main {
                     System.out.println("Busqueda por NOMBRE");
                     System.out.println("¿A quien desea Eliminar? ");
                     String nombreE = sc.next();
-                    v.BuscarPersona(nombreE);
+                    int l = v.BuscarPersona(nombreE);
                     System.out.println("¿Seguro que desea elminar a " + nombreE + " ? (s/n): ");
                     String opsE = sc.next();
 
-                    if (opsE.equals("s")) {
-                        System.out.println("Ingrese la posición de " + nombreE);
-                        int pos = sc.nextInt();
-                        v.Eliminar(pos);
+                    if (l!=-1 && opsE.equals("s")) {
+                        v.Eliminar(l);
                         System.out.println(nombreE + " eliminado correctamente");
+                    }else if (l==-1 && opsE.equals("s")){
+                        System.out.println("No se a encontrado a la persona");
                     }
                     break;
                 case 5:
                     System.out.println("¡Gracias por usar la base de datos!");
 
                 default:
-                    throw new AssertionError("Seleccione una opción valida");
+                    throw new AssertionError();
             }
 
             if (conti) {
